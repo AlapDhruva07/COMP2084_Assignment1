@@ -17,7 +17,7 @@ namespace COMP2084_Assignment1.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Welcome to the Car Junction";
 
             return View();
         }
