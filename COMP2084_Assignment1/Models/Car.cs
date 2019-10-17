@@ -8,6 +8,7 @@ namespace COMP2084_Assignment1.Models
 {
     public class Car
     {
+       //primary key
         [Key]
         public int CarId { get; set; }
         public string CarName { get; set; }

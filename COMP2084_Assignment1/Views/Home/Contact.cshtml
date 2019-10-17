@@ -1,18 +1,26 @@
-﻿<link rel="stylesheet" href="~/css/style.css" />
+﻿<!--
+link css file to this pahe
+-->
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="~/css/mystyle.css" />
 @{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<div id="mycar">
+    <h2>@ViewData["Title"]</h2>
+    <h3>@ViewData["Message"]</h3>
+    <!--
+    added address
+    -->
+    <address>
+        265 Grove Street East<br />
+        Barrie, Ontario, L4M4Y1<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
 
-<address>
-    265 Grove Street East<br />
-    Barrie, Ontario, L4M4Y1<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <address>
+        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+</div>

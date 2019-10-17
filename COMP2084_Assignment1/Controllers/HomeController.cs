@@ -24,7 +24,7 @@ namespace COMP2084_Assignment1.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "My contact page.";
+            ViewData["Message"] = "Contact Details";
 
             return View();
         }
