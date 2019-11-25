@@ -22,6 +22,7 @@ namespace COMP2084_Assignment1.Controllers
         // GET: Companies
         public async Task<IActionResult> Index()
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             return View(await _context.Company.ToListAsync());
         }
 
@@ -56,6 +57,7 @@ namespace COMP2084_Assignment1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CompanyName,City,Country,Province,Nationality")] Company company)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             if (ModelState.IsValid)
             {
                 _context.Add(company);
@@ -68,6 +70,7 @@ namespace COMP2084_Assignment1.Controllers
         // GET: Companies/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             if (id == null)
             {
                 return NotFound();
@@ -88,6 +91,7 @@ namespace COMP2084_Assignment1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("CompanyName,City,Country,Province,Nationality")] Company company)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             if (id != company.CompanyName)
             {
                 return NotFound();
@@ -119,6 +123,7 @@ namespace COMP2084_Assignment1.Controllers
         // GET: Companies/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             if (id == null)
             {
                 return NotFound();

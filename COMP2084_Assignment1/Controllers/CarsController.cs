@@ -22,6 +22,7 @@ namespace COMP2084_Assignment1.Controllers
         // GET: Cars
         public async Task<IActionResult> Index()
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             var context = _context.Car.Include(c => c.Company);
             return View(await context.ToListAsync());
         }
@@ -48,6 +49,7 @@ namespace COMP2084_Assignment1.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
+           if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             ViewData["CompanyName"] = new SelectList(_context.Set<Company>(), "CompanyName", "CompanyName");
             return View();
         }
@@ -72,6 +74,7 @@ namespace COMP2084_Assignment1.Controllers
         // GET: Cars/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             if (id == null)
             {
                 return NotFound();
@@ -125,6 +128,7 @@ namespace COMP2084_Assignment1.Controllers
         // GET: Cars/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
             if (id == null)
             {
                 return NotFound();
