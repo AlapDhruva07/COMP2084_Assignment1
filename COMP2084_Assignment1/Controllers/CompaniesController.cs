@@ -19,6 +19,7 @@ namespace COMP2084_Assignment1.Controllers
             _context = context;
         }
 
+
         // GET: Companies
         public async Task<IActionResult> Index()
         {
